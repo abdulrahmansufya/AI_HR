@@ -1,0 +1,6 @@
+from .department_serializer import DepartmentSerializer
+from .job_position_serializer import JobPositionSerializer
+from .candidate_serializer import CandidateSerializer
+from .resume_serializer import ResumeSerializer
+from .screening_result_serializer import ScreeningResultSerializer
+from .interview_question_set_serializer import InterviewQuestionSetSerializer
