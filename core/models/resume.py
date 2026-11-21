@@ -2,6 +2,7 @@
 from django.db import models
 from .candidate import Candidate
 
+
 class Resume(models.Model):
     candidate = models.ForeignKey(
         Candidate,
@@ -15,6 +16,8 @@ class Resume(models.Model):
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["-uploaded_at"]
 
     def __str__(self):
         return f"Resume - {self.candidate.full_name}"

@@ -28,3 +28,16 @@ class JobPositionSerializer(serializers.ModelSerializer):
             "created_at",
         ]
         read_only_fields = ["id", "created_at"]
+
+    def validate_required_skills(self, value):
+        if not isinstance(value, list):
+            raise serializers.ValidationError(
+                "Required skills must be a list."
+            )
+
+        if not all(isinstance(skill, str) for skill in value):
+            raise serializers.ValidationError(
+                "Each skill must be a string."
+            )
+
+        return value

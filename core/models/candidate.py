@@ -17,7 +17,8 @@ class Candidate(models.Model):
         auto_now_add=True
     )
 
-    
+    class Meta:
+        ordering = ["full_name"]
 
     def __str__(self):
         return self.full_name

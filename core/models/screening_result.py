@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from .candidate import Candidate
 from .job_position import JobPosition
 
+
 class ScreeningResult(models.Model):
 
     class Recommendation(models.TextChoices):
@@ -50,6 +51,8 @@ class ScreeningResult(models.Model):
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["-generated_at"]
 
     def __str__(self):
         return f"{self.candidate.full_name} - {self.score}%"

@@ -23,5 +23,8 @@ class JobPosition(models.Model):
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["title"]
+
     def __str__(self):
         return self.title

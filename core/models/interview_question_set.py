@@ -37,6 +37,8 @@ class InterviewQuestionSet(models.Model):
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["-generated_at"]
 
     def __str__(self):
         return f"Interview Questions - {self.candidate.full_name}"
